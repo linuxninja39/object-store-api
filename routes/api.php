@@ -15,17 +15,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::middleware('auth:api')->get('/user', function (Request $request) {
-    return $request->user();
-});
-
 Route::post('upload', 'FileController@upload')->name('upload');
 Route::get('list', 'FileController@list')->name('list');
 Route::get('file/{fileName}', 'FileController@getFile')->where(['fileName' => '[a-zA-z0-9 -_.]+']);
 
-Route::get(
-    'hello',
-    function (Request $request) {
-        return 'hello';
-    }
-);
